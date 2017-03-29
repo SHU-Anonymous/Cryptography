@@ -1,0 +1,65 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}信息安全{% endblock %}
+
+{% block head %}
+{{ super() }}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        background: #cce8cf;
+    }
+    .warpper {
+        width: 50%;
+        margin:10% auto;
+        padding:2% 10%;
+        background: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+</style>
+    <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <div class="warpper">
+        <div class="page-header">
+            <h1>网络安全</h1>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            计算机安全算法演示 <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="{{ url_for('md5') }}">MD5算法</a></li>
+            <li><a href="">SHA算法</a></li>
+            <li><a href="">DES算法</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{ url_for('Rsa') }}">RSA算法</a></li>
+            <li><a href="">数字签名和验证</a> </li>
+          </ul>
+        </div>
+        {% block page_content %}{% endblock %}
+        <div>
+            <br><br>
+
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">成员分工</button>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">小组成员分工</h4>
+          </div>
+          <div class="modal-body">
+            <p>钱晨</p>
+          </div>
+
+        </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+        </div>
+
+            </div>
+    </div>
+</div>
+{% endblock %}

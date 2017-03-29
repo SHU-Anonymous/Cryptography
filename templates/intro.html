@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+    <br />
+    <br />
+    {{ wtf.quick_form(form) }}
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="sizing-addon2">>></span>
+        <input disabled type="text" class="form-control" aria-describedby="sizing-addon2" value="{{ md5String }}">
+    </div>
+
+
+
+{% endblock %}
